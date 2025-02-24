@@ -1,2 +1,0 @@
-# vrituals
-Kwalhia app
