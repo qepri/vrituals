@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Circular paths with connection points -->
+  <g transform="translate(100,100)">
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="white" stroke-width="4"/>
+    
+    <!-- Top half -->
+    <path d="M -60,0 A 60,60 0 0,1 -30,-52 M -30,-52 A 60,60 0 0,1 30,-52 M 30,-52 A 60,60 0 0,1 60,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+    
+    <path d="M -45,0 A 45,45 0 0,1 -22.5,-39 M -22.5,-39 A 45,45 0 0,1 22.5,-39 M 22.5,-39 A 45,45 0 0,1 45,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+          
+    <path d="M -30,0 A 30,30 0 0,1 -15,-26 M -15,-26 A 30,30 0 0,1 15,-26 M 15,-26 A 30,30 0 0,1 30,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+    
+    <!-- Bottom half (mirrored) -->
+    <path d="M -60,0 A 60,60 0 0,0 -30,52 M -30,52 A 60,60 0 0,0 30,52 M 30,52 A 60,60 0 0,0 60,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+    
+    <path d="M -45,0 A 45,45 0 0,0 -22.5,39 M -22.5,39 A 45,45 0 0,0 22.5,39 M 22.5,39 A 45,45 0 0,0 45,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+          
+    <path d="M -30,0 A 30,30 0 0,0 -15,26 M -15,26 A 30,30 0 0,0 15,26 M 15,26 A 30,30 0 0,0 30,0" 
+          fill="none" stroke="white" stroke-width="4"/>
+    
+    <!-- Vertical connectors -->
+    <line x1="0" y1="-20" x2="0" y2="-30" stroke="white" stroke-width="4"/>
+    <line x1="0" y1="-45" x2="0" y2="-60" stroke="white" stroke-width="4"/>
+    <!-- Bottom connectors -->
+    <line x1="0" y1="20" x2="0" y2="30" stroke="white" stroke-width="4"/>
+    <line x1="0" y1="45" x2="0" y2="60" stroke="white" stroke-width="4"/>
+    
+    <!-- Connection points (dots) -->
+    <!-- Top dots -->
+    <circle cx="0" cy="-60" r="4" fill="white"/>
+    <circle cx="-30" cy="-52" r="4" fill="white"/>
+    <circle cx="30" cy="-52" r="4" fill="white"/>
+    
+    <circle cx="0" cy="-45" r="4" fill="white"/>
+    <circle cx="-22.5" cy="-39" r="4" fill="white"/>
+    <circle cx="22.5" cy="-39" r="4" fill="white"/>
+    
+    <circle cx="0" cy="-30" r="4" fill="white"/>
+    <circle cx="-15" cy="-26" r="4" fill="white"/>
+    <circle cx="15" cy="-26" r="4" fill="white"/>
+    
+    <!-- Middle dots -->
+    <circle cx="-60" cy="0" r="4" fill="white"/>
+    <circle cx="-45" cy="0" r="4" fill="white"/>
+    <circle cx="-30" cy="0" r="4" fill="white"/>
+    
+    <circle cx="60" cy="0" r="4" fill="white"/>
+    <circle cx="45" cy="0" r="4" fill="white"/>
+    <circle cx="30" cy="0" r="4" fill="white"/>
+    
+    <!-- Bottom dots (mirrored) -->
+    <circle cx="0" cy="60" r="4" fill="white"/>
+    <circle cx="-30" cy="52" r="4" fill="white"/>
+    <circle cx="30" cy="52" r="4" fill="white"/>
+    
+    <circle cx="0" cy="45" r="4" fill="white"/>
+    <circle cx="-22.5" cy="39" r="4" fill="white"/>
+    <circle cx="22.5" cy="39" r="4" fill="white"/>
+    
+    <circle cx="0" cy="30" r="4" fill="white"/>
+    <circle cx="-15" cy="26" r="4" fill="white"/>
+    <circle cx="15" cy="26" r="4" fill="white"/>
+  </g>
+</svg>

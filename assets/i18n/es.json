@@ -1,0 +1,209 @@
+{
+    "NAV": {
+        "HOME": "Inicio",
+        "CONVERSATIONS": "conversaciones",
+        "UPGRADE": "Actualizar",
+        "CREATE": "Crear",
+        "HI": "Hola",
+        "SETTINGS": "Configuración",
+        "LOGOUT": "Cerrar sesión"
+    },
+    "AUTH": {
+        "LOGIN": "Ingresar",
+        "REGISTER": "Registrarse",
+        "EMAIL": "Correo electrónico",
+        "PASSWORD": "Contraseña",
+        "FORGOT_PASSWORD": "¿Olvidaste tu contraseña?",
+        "CONFIRM_PASSWORD": "Confirmar contraseña",
+        "NAME": "Nombre",
+        "LASTNAME": "Apellido",
+        "BIRTHDATE": "Fecha de nacimiento",
+        "TERMS": {
+            "ACCEPT": "He leído y acepto",
+            "TERMS": "términos y condiciones",
+            "AND": "y",
+            "PRIVACY": "política de privacidad",
+            "REQUIRED": "Debe aceptar los términos"
+        },
+        "VALIDATION": {
+            "EMAIL_REQUIRED": "El correo electrónico es obligatorio",
+            "PASSWORD_REQUIRED": "La contraseña es obligatoria",
+            "PASSWORD_MISMATCH": "Las contraseñas no coinciden",
+            "NAME_REQUIRED": "El nombre es obligatorio",
+            "LASTNAME_REQUIRED": "El apellido es obligatorio",
+            "BIRTHDATE_REQUIRED": "La fecha de nacimiento es obligatoria"
+        },
+        "BUTTONS": {
+            "LOGIN": "Ingresar",
+            "REGISTER": "Registrarse",
+            "CONTINUE": "Continuar",
+            "BACK": "Atrás",
+            "GOOGLE": "Iniciar sesión con Google"
+        },
+        "MESSAGES": {
+            "REGISTRATION_SUCCESS": "Tu cuenta se registró con éxito. Por favor, revisa tu correo para confirmar tu cuenta.",
+            "LOGIN_FAILED": "Error al iniciar sesión",
+            "REGISTRATION_FAILED": "Error al registrarse"
+        }
+    },
+    "DASHBOARD": {
+      "NO_CHATBOTS": "No hay roles de chatbot disponibles. Por favor, inténtalo de nuevo más tarde.",
+      "CREATE_NEW": "Crear Nuevo",
+      "AVAILABLE_CHATBOTS": "Personajes disponibles"
+    },
+    "BILLING": {
+        "TITLE": "Facturación y Suscripción",
+        "PRO_MEMBER": "Miembro Pro",
+        "FREE_ACCOUNT": "Cuenta Gratuita",
+        "WELCOME_BACK": "Bienvenido de nuevo",
+        "ENJOY_PREMIUM": "Disfruta de tus funciones premium",
+        "UNLOCK_FEATURES": "Desbloquea todas las funciones con Pro",
+        "MESSAGES": {
+            "CANCEL_CONFIRM": "¿Estás seguro de cancelar tu subscripción?",
+            "CONFIRM_CANCEL": "Sí, Cancelar",
+            "SUBSCRIPTION_ENDS": "Tu suscripción actual termina",
+            "NO_SUBSCRIPTION": "No estás suscrito a ningún plan",
+            "PREMIUM_DESC": "Obtén Zenia premium y expande tus posibilidades",
+            "FAILED_LOAD": "Error al cargar la información de facturación"
+          },
+        "PLANS": {
+            "MONTHLY": {
+                "TITLE": "Pro Mensual",
+                "PRICE": "$14.99",
+                "PERIOD": "por mes"
+            },
+            "ANNUAL": {
+                "TITLE": "Pro Anual",
+                "PRICE": "$143.904",
+                "PERIOD": "por año",
+                "SAVE": "AHORRA 20%"
+            }
+        },
+        "FEATURES": {
+            "ENDLESS": "Posibilidades infinitas con conversaciones de IA",
+            "CUSTOM": "Personalidades de IA personalizadas",
+            "PRIORITY": "Soporte prioritario",
+            "ADVANCED": "Funciones avanzadas",
+            "DISCOUNT": "20% de descuento",
+            "HISTORY": "Historial de conversaciones extendido",
+            "EARLY_ACCESS": "Acceso anticipado a nuevas funciones"
+        },
+        "BUTTONS": {
+            "GET_STARTED": "Comenzar",
+            "SAVE_ANNUAL": "Ahorrar con Anual",
+            "UPGRADE": "Mejorar a Pro",
+            "CANCEL": "Cancelar suscripción"
+        },
+        "INVOICES": {
+            "TITLE": "Facturas",
+            "DATE": "Fecha",
+            "TYPE": "Tipo",
+            "AMOUNT": "Cantidad",
+            "ACTIONS": "Acciones",
+            "VIEW_PDF": "Ver PDF",
+            "NO_INVOICES": "No hay facturas disponibles"
+        }
+    },
+    "CHAT": {
+        "YOU": "Tú",
+        "SENDING": "enviando...",
+        "SEND": "Enviar",
+        "PLACEHOLDER": "Escribe tu mensaje aquí...",
+        "LIMIT_REACHED": "Límite diario alcanzado. Actualizate a una cuenta pro para expandir tus límites.",
+        "LOADING": "Cargando chat...",
+        "ERROR": {
+          "GENERIC": "Disculpa, ocurrió un error al procesar tu solicitud.",
+          "LAST_REQUEST": "Esta es tu última solicitud gratuita por hoy. Actualiza a pro para uso profesional."
+        }
+    },
+    "PROFILE_CONFIG": {
+      "MENU_SIDE": {
+        "SETTINGS": "Configuración",
+        "BILLING": "Facturacion",
+        "LOGOUT": "Salir"
+      }
+    },
+    "SETTINGS": {
+      "TITLE": "Configuración cuenta",
+      "SELECT_OPTIONS": "Selecciona una sección",
+      "CHOSE_SECTION": "Selecciona para ver detalles",
+        "LANGUAGE": {
+            "TITLE": "Configuración de Idioma",
+            "DISPLAY": "Idioma de visualización",
+            "SAVE": "Guardar cambios"
+        }
+    },
+    "COMMON": {
+        "LOADING": "Cargando...",
+        "STARTING": "Inicializando...",
+        "ERROR": "Ocurrió un error",
+        "RETRY": "Reintentar",
+        "TRY": "Intentar de nuevo",
+        "SAVE": "Guardar",
+        "CANCEL": "Cancelar",
+        "PROCESSING": "Procesando...",
+        "NO_DATA": "No hay datos disponibles",
+        "BACK": "Regresar",
+        "CONTINUE": "continuar",
+        "REDIRECTING": "Redireccionando...",
+        "LOAD_END": "Carga completada"
+    },
+    "FOOTER": {
+        "RIGHTS": "Kwalhia | Lo que no se dice © 2025",
+        "POWERED": "desarrollado por Kwalhia",
+        "LINKS": {
+            "PRICING": "Precios",
+            "ABOUT": "Sobre nosotros",
+            "TERMS": "Términos del servicio",
+            "PRIVACY": "Política de privacidad"
+        }
+    },
+  "CREATE": {
+    "TITLE": "Crear Agente",
+    "STEPS": {
+      "BASIC": {
+        "TITLE": "Información Básica",
+        "NAME": "Nombre",
+        "NAME_HELP": "Elige un nombre único (3-50 caracteres)",
+        "DESCRIPTION": "Descripción",
+        "DESCRIPTION_HELP": "Breve resumen (máximo 200 caracteres)"
+      },
+      "PERSONALITY": {
+        "TITLE": "Configuración de Personalidad",
+        "INSTRUCTIONS": "Instrucciones del Personaje",
+        "CARDS": {
+          "IDENTITY": {
+            "TITLE": "Identidad",
+            "DESC": "Define quién es este personaje, su experiencia, conocimientos y características principales"
+          },
+          "PURPOSE": {
+            "TITLE": "Propósito",
+            "DESC": "Explica sus objetivos principales y cómo ayudan a los usuarios"
+          },
+          "STYLE": {
+            "TITLE": "Estilo",
+            "DESC": "Describe su estilo de comunicación, tono y modismos únicos"
+          }
+        },
+        "PROMPT_EXAMPLE": "Ejemplo:\nSoy la Dra. Sarah Chen, una científica de datos experimentada especializada en aprendizaje automático. Con 15 años en el campo, me especializo en explicar conceptos complejos en términos simples.\n\nMi objetivo es ayudar a los usuarios a comprender conceptos de IA y aprendizaje automático, asistir en el análisis de datos y proporcionar orientación sobre las mejores prácticas en ciencia de datos.\n\nMantengo un tono amigable pero profesional, frecuentemente usando analogías para explicar conceptos técnicos. Soy directa pero accesible, y me aseguro de que mis explicaciones sean completas mientras permanecen accesibles para estudiantes de todos los niveles.",
+        "TIPS": {
+          "TITLE": "Consejos de Escritura",
+          "INTRO": "Comienza con una introducción clara de quién es el personaje",
+          "EXPERTISE": "Incluye experiencia relevante, antecedentes o trayectoria",
+          "PURPOSE": "Define su propósito principal y cómo ayuda a los usuarios",
+          "STYLE": "Describe su estilo de comunicación y personalidad",
+          "RULES": "Añade reglas específicas o límites que deben seguir"
+        },
+        "CHAR_REQUIREMENT": "Las instrucciones del personaje deben ser detalladas y específicas (mínimo 1000 caracteres)"
+      },
+      "FINISHING": {
+        "TITLE": "Toques Finales",
+        "AVATAR_URL": "URL del Avatar",
+        "MAKE_PUBLIC": "Hacer público este rol"
+      }
+    },
+    "BUTTONS": {
+      "CREATE": "Crear"
+    }
+  }
+}

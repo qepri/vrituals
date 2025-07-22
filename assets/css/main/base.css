@@ -1,0 +1,81 @@
+/* Global styles */
+body {
+    font-family: var(--font-body) !important;
+    font-size: var(--font-size-base);
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Typography */
+  h1, h2 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  
+  h3, h4, h5, h6 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  
+  h1 { font-size: var(--font-size-h1); }
+  h2 { font-size: var(--font-size-h2); }
+  h3 { font-size: var(--font-size-h3); }
+  h4 { font-size: var(--font-size-h4); }
+  h5 { font-size: var(--font-size-h5); }
+  h6 { font-size: var(--font-size-h6); }
+  
+  /* Image treatments */
+  .img-thumbnail {
+    border-radius: 0 !important;
+    padding: 0.25rem;
+    border: var(--border-width) var(--border-style) var(--border) !important;
+  }
+  
+  .card-img-top {
+    border-radius: 0 !important;
+  }
+  
+  /* Gallery preview */
+  .gallery-preview {
+    border: var(--border-width) var(--border-style) var(--border);
+  }
+  
+  /* Text utilities */
+  .text-muted {
+    color: var(--muted-text) !important;
+  }
+  
+  .text-danger {
+    color: var(--deep-red) !important;
+  }
+  
+  .text-primary {
+    color: var(--deep-blue) !important;
+  }
+  
+  .text-success {
+    color: var(--deep-green) !important;
+  }
+
+  .matrix-char {
+    color: var(--matrix-text) !important;
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 576px) {
+    .card-header, .card-body, .card-footer {
+      padding: 0.75rem;
+    }
+    
+    .container {
+      padding: 0.75rem;
+    }
+  }
