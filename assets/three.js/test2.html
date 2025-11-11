@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern ZYZYX Breathing Mandala</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #030712;
+        }
+        canvas {
+            display: block;
+        }
+        .bloom {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            filter: blur(40px);
+            opacity: 0.6;
+            mix-blend-mode: screen;
+        }
+        .loading {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #030712;
+            color: #94a3b8;
+            font-family: system-ui, -apple-system, sans-serif;
+            transition: opacity 0.5s ease-out;
+        }
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .hue-shift {
+            animation: hueRotate 60s linear infinite;
+        }
+        @keyframes hueRotate {
+            from {
+                filter: hue-rotate(0deg);
+            }
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hue-shift">
+        <div class="bloom"></div>
+        <canvas></canvas>
+    </div>
+    <div class="loading">Loading...</div>
+    <script type="module">
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js';
+
+        // Modern WebGL renderer setup with better defaults
+        const renderer = new THREE.WebGLRenderer({ 
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance",
+            stencil: false
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        // Modern material creation with better performance
+        const createModernMaterial = (config) => {
+            return new THREE.MeshPhysicalMaterial({
+                metalness: 0.2,
+                roughness: 0.1,
+                envMapIntensity: 1,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.1,
+                ...config
+            });
+        };
+
+        const createCentralMandala = () => {
+            const group = new THREE.Group();
+            
+            const layers = 8;
+            const segments = 12; // Increased detail
+            
+            for(let i = 0; i < layers; i++) {
+                const radius = 1 + i * 0.15;
+                const geometry = new THREE.CircleGeometry(radius, segments);
+                
+                const material = createModernMaterial({
+                    color: new THREE.Color(0x00bcd4).multiplyScalar(1.2),
+                    emissive: new THREE.Color(0x0088aa),
+                    transparent: true,
+                    opacity: 0.8 - (i * 0.05),
+                    side: THREE.DoubleSide
+                });
+                
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.rotation.x = Math.PI / 2;
+                
+                for(let j = 0; j < segments; j++) {
+                    const clone = mesh.clone();
+                    clone.rotation.z = (Math.PI / (segments/2)) * j;
+                    group.add(clone);
+                }
+            }
+            
+            return group;
+        };
+
+        const createDetailedRing = (radius, segments) => {
+            const group = new THREE.Group();
+            
+            const tubeRadius = radius * 0.02;
+            const geometry = new THREE.TorusGeometry(radius, tubeRadius, 32, segments);
+            const material = createModernMaterial({
+                color: 0x4a148c,
+                emissive: 0x2a0845,
+                transparent: true,
+                opacity: 0.9
+            });
+            
+            const mainRing = new THREE.Mesh(geometry, material);
+            group.add(mainRing);
+            
+            // Enhanced decorative elements
+            const decorCount = segments * 2;
+            for(let i = 0; i < decorCount; i++) {
+                const angle = (i / decorCount) * Math.PI * 2;
+                const decorGeometry = new THREE.OctahedronGeometry(tubeRadius * 2);
+                const decorMaterial = createModernMaterial({
+                    color: 0x00ffff,
+                    emissive: 0x00bcd4,
+                    transparent: true,
+                    opacity: 0.95
+                });
+                
+                const decor = new THREE.Mesh(decorGeometry, decorMaterial);
+                decor.position.x = Math.cos(angle) * radius;
+                decor.position.y = Math.sin(angle) * radius;
+                decor.rotation.z = angle + Math.PI / 2;
+                group.add(decor);
+            }
+            
+            return group;
+        };
+
+        const createEnhancedParticles = () => {
+            const particles = 3000;
+            const positions = new Float32Array(particles * 3);
+            const colors = new Float32Array(particles * 3);
+            const sizes = new Float32Array(particles);
+            
+            for(let i = 0; i < particles * 3; i += 3) {
+                const radius = THREE.MathUtils.randFloat(3, 7);
+                const theta = THREE.MathUtils.randFloat(0, Math.PI * 2);
+                const phi = THREE.MathUtils.randFloat(0, Math.PI);
+                
+                positions[i] = radius * Math.sin(phi) * Math.cos(theta);
+                positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+                positions[i + 2] = radius * Math.cos(phi);
+                
+                const color = new THREE.Color();
+                color.setHSL(THREE.MathUtils.randFloat(0.5, 0.7), 0.8, 0.6);
+                colors[i] = color.r;
+                colors[i + 1] = color.g;
+                colors[i + 2] = color.b;
+                
+                sizes[i/3] = THREE.MathUtils.randFloat(0.02, 0.08);
+            }
+            
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+            
+            // Create a sprite texture for circular particles
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const size = 64;
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Draw a circle
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+            
+            // Create texture from canvas
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.needsUpdate = true;
+
+            const material = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true,
+                map: texture,
+                alphaTest: 0.1,
+                depthWrite: false
+            });
+            
+            return new THREE.Points(geometry, material);
+        };
+
+        // Create and add objects
+        const mandala = createCentralMandala();
+        const outerRing1 = createDetailedRing(2.5, 48);
+        const outerRing2 = createDetailedRing(3.2, 48);
+        const particles = createEnhancedParticles();
+
+        // Modern lighting setup
+        const light1 = new THREE.PointLight(0x00ffff, 3, 50);
+        light1.position.set(5, 5, 5);
+        const light2 = new THREE.PointLight(0x4a148c, 3, 50);
+        light2.position.set(-5, -5, -5);
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+
+        scene.add(mandala, outerRing1, outerRing2, particles, light1, light2, ambientLight);
+        camera.position.z = 5;
+
+        // Mouse interaction setup
+        const mouse = {
+            x: 0,
+            y: 0,
+            targetX: 0,
+            targetY: 0
+        };
+        
+        document.addEventListener('mousemove', (event) => {
+            // Convert mouse position to normalized device coordinates (-1 to +1)
+            mouse.targetX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.targetY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Modern animation system with RAF and delta time
+        const clock = new THREE.Clock();
+        let time = 0;
+        
+        // Initial camera position
+        const cameraBasePosition = new THREE.Vector3(0, 0, 5);
+
+        const animate = () => {
+            const delta = clock.getDelta();
+            time += delta;
+
+            // Smooth mouse position interpolation
+            mouse.x += (mouse.targetX - mouse.x) * 0.01;
+            mouse.y += (mouse.targetY - mouse.y) * 0.01;
+            
+            // Camera movement based on mouse position
+            camera.position.x = cameraBasePosition.x + mouse.x * 0.5;
+            camera.position.y = cameraBasePosition.y + mouse.y * 0.5;
+            camera.lookAt(mouse.x * 0.2, mouse.y * 0.2, 0);
+            
+            // Gentle mandala tilt based on mouse position
+            mandala.rotation.x = Math.PI / 2 + mouse.y * 0.1;
+            mandala.rotation.y = mouse.x * 0.1;
+            
+            // Subtle particles response to mouse
+            particles.rotation.x = mouse.y * 0.02;
+            particles.rotation.z = mouse.x * 0.02;
+            
+            // Slower, more gentle breathing effect
+            const breathingScale = 1 + Math.sin(time * 0.3) * 0.06;
+            mandala.scale.setScalar(breathingScale);
+            
+            // Slower organic rotations
+            mandala.rotation.z += delta * 0.05;
+            outerRing1.rotation.z += delta * 0.03;
+            outerRing2.rotation.z -= delta * 0.02;
+            particles.rotation.y += delta * 0.01;
+            
+            // Slower dynamic lighting
+            const lightRadius = 5;
+            light1.position.x = Math.sin(time * 0.15) * lightRadius;
+            light1.position.y = Math.cos(time * 0.15) * lightRadius;
+            light2.position.x = -Math.sin(time * 0.1) * lightRadius;
+            light2.position.y = -Math.cos(time * 0.1) * lightRadius;
+
+            // Modern bloom effect
+            const bloomElement = document.querySelector('.bloom');
+            bloomElement.style.background = `
+                radial-gradient(circle at 50% 50%, 
+                rgba(0, 188, 212, ${0.4 + Math.sin(time * 0.3) * 0.15}),
+                rgba(74, 20, 140, ${0.3 + Math.cos(time * 0.3) * 0.15}),
+                transparent 80%)
+            `;
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        };
+
+        // Modern resize handling with debounce
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            }, 100);
+        });
+
+        // Remove loading screen when ready
+        window.addEventListener('load', () => {
+            document.querySelector('.loading').classList.add('hidden');
+            animate();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* Form elements */
+.form-control, .form-select {
+    background-color: var(--input-bg) !important;
+    border: var(--border-width) var(--border-style) var(--input-border) !important;
+    border-radius: 0 !important;
+    color: var(--text) !important;
+    font-family: var(--font-body) !important;
+    padding: 0.5rem;
+    transition: border-color 0.15s ease-in-out;
+    height: auto;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    box-shadow: none !important;
+    border-color: var(--btn-primary) !important;
+    background-color: var(--input-bg) !important;
+    color: var(--text) !important;
+  }
+  
+  .form-control-color {
+    height: 38px;
+    padding: 0.25rem;
+    width: 38px;
+  }
+  
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+  }
+  
+  .form-check-input {
+    border: var(--border-width) var(--border-style) var(--input-border) !important;
+    background-color: var(--input-bg) !important;
+    border-radius: 0 !important;
+  }
+  
+  .form-check-input:checked {
+    background-color: var(--btn-primary) !important;
+    border-color: var(--btn-primary) !important;
+  }
+  
+  textarea.form-control {
+    font-family: var(--font-body) !important;
+    line-height: 1.5;
+    min-height: 100px;
+  }
+  
+  /* Automatically style all dropdown and select elements */
+  select,
+  .form-select,
+  .dropdown-toggle,
+  [role="combobox"] {
+    background-color: color-mix(in srgb, var(--btn-primary) 10%, var(--input-bg)) !important;
+    border-left: var(--border-width-thicker) var(--border-style) var(--btn-primary) !important;
+  }
+  
+  select:focus,
+  .form-select:focus,
+  .dropdown-toggle:focus,
+  [role="combobox"]:focus {
+    background-color: color-mix(in srgb, var(--btn-primary) 15%, var(--input-bg)) !important;
+  }
+  
+  /* Fallback for browsers that don't support color-mix */
+  @supports not (color-mix(in srgb, #000, #fff)) {
+    select,
+    .form-select,
+    .dropdown-toggle,
+    [role="combobox"] {
+      background-color: rgba(0, 0, 139, 0.1) !important;
+    }
+  }
+  
+  /* Dark theme compatibility */
+  .dark-theme select,
+  .dark-theme .form-select,
+  .dark-theme .dropdown-toggle,
+  .dark-theme [role="combobox"] {
+    background-color: color-mix(in srgb, var(--btn-primary) 15%, var(--dark-input-bg)) !important;
+  }
+  
+  /* Darker backgrounds for input fields */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  .form-control {
+    background-color: color-mix(in srgb, var(--black) 5%, var(--input-bg)) !important;
+  }
+  
+  /* Even darker on focus for better distinction */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="url"]:focus,
+  textarea:focus,
+  .form-control:focus {
+    background-color: color-mix(in srgb, var(--black) 8%, var(--input-bg)) !important;
+  }
+  
+  /* Dark theme inputs - slightly different treatment for better contrast */
+  .dark-theme input[type="text"],
+  .dark-theme input[type="email"],
+  .dark-theme input[type="password"],
+  .dark-theme input[type="number"],
+  .dark-theme input[type="date"],
+  .dark-theme input[type="search"],
+  .dark-theme input[type="tel"],
+  .dark-theme input[type="url"],
+  .dark-theme textarea,
+  .dark-theme .form-control {
+    background-color: color-mix(in srgb, var(--black) 15%, var(--dark-input-bg)) !important;
+  }
+
+  /* OVERRIDES BOOTSTRAP STYLES */
+  
+  .nav-tabs .nav-link {
+    border-radius: 0;
+  }
+  
+  .nav-tabs .nav-link.active {
+    border-radius: 0;
+  }

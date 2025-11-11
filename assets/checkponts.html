@@ -1,0 +1,225 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo ram</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #000000;
+            color: lightgray;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contianer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            background-color: #ff2d2d;
+            color: lightgray
+        }
+
+        .todo li {
+            list-style: none;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Add these styles for checkboxes */
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            border-radius: 0;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            border: 2px solid lightgray;
+            background-color: transparent;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: lightgray;
+        }
+
+        label {
+            cursor: pointer;
+            margin-left: 8px;
+        }
+    </style>
+    <h2 style="text-align:center;margin-bottom: 0px; font-family: 'Lucida Sans'; font-size: 10vh;">R A M</h2>
+
+    <div class="contianer">
+
+
+        <div class="tabs" style="display: flex;">
+            <button class="tab-btn active" onclick="openTab('drafts')">Drafts</button>
+            <button class="tab-btn" onclick="openTab('presentations')">Presentations</button>
+            <button class="tab-btn" onclick="openTab('products')">Products</button>
+        </div>
+
+    </div>
+
+
+    <div id="drafts" class="tab-content active">
+        <ul class="todo">
+            <h3>drafts</h3>
+            <li>
+                <input type="checkbox" id="draft1" name="draft1">
+                <label for="draft1">practice TD</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft2" name="draft2">
+                <label for="draft2">make base projects TD</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft3" name="draft3">
+                <label for="draft3">test py scripting</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft4" name="draft4">
+                <label for="draft4">connect websockets</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft5" name="draft5">
+                <label for="draft5">set websocket control html/js</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft6" name="draft6">
+                <label for="draft6">communicate websocket controls to TD</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft7" name="draft7">
+                <label for="draft7">py script: socket to ANY operator in TD</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft8" name="draft8">
+                <label for="draft8">set webRTC to output/input video into web/TD</label>
+            </li>
+            <li>
+                <input type="checkbox" id="draft9" name="draft9">
+                <label for="draft9">are there alternatives for input/output video from TD?</label>
+            </li>
+        </ul>
+    </div>
+
+    <div id="presentations" class="tab-content">
+        <ul class="todo">
+            <h3>presentations</h3>
+            <li>
+                <input type="checkbox" id="pres1" name="pres1">
+                <label for="pres1">Example Presentation 1</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pres2" name="pres2">
+                <label for="pres2">Example Presentation 2</label>
+            </li>
+        </ul>
+    </div>
+
+    <div id="products" class="tab-content">
+        <ul class="todo">
+            <h3>products</h3>
+            <li>
+                <input type="checkbox" id="prod1" name="prod1">
+                <label for="prod1">Product Alpha - In Development</label>
+            </li>
+            <li>
+                <input type="checkbox" id="prod2" name="prod2">
+                <label for="prod2">Product Beta - Testing Phase</label>
+            </li>
+            <li>
+                <input type="checkbox" id="prod3" name="prod3">
+                <label for="prod3">Product Gamma - Ready for Launch</label>
+            </li>
+        </ul>
+    </div>
+
+    <style>
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid lightgray;
+            color: lightgray;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            background: lightgray;
+            color: black;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+
+
+    </div>
+
+    <div class="container">
+        <!-- <div style="margin-left: 10vw; justify-content: flex-start;">
+            <h3>
+                plans 2 future
+            </h3>
+
+            <p>
+                create a sanctuary on vr with 360 video output from TD using webRTC
+            </p>
+        </div> -->
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            const tabBtns = document.getElementsByClassName('tab-btn');
+
+            for (let content of tabContents) {
+                content.classList.remove('active');
+            }
+
+            for (let btn of tabBtns) {
+                btn.classList.remove('active');
+            }
+
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        // Get all checkboxes
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        // Load saved states
+        checkboxes.forEach((checkbox, index) => {
+            const savedState = localStorage.getItem(`todo_${index}`);
+            checkbox.checked = savedState === 'true';
+        });
+
+        // Save states on change
+        checkboxes.forEach((checkbox, index) => {
+            checkbox.addEventListener('change', () => {
+                localStorage.setItem(`todo_${index}`, checkbox.checked);
+            });
+        });
+    </script>
+</body>
+
+</html>

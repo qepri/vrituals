@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<style>
+    body { margin: 0; background: #000; }
+    .hue-shift { animation: h 30s linear infinite; }
+    @keyframes h { to { filter: hue-rotate(360deg) } }
+</style>
+<div class="hue-shift"></div>
+<script type="module">
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.module.min.js';
+    const s = new THREE.Scene(), 
+          c = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 100),
+          r = new THREE.WebGLRenderer({alpha: true});
+    r.setSize(innerWidth, innerHeight);
+    document.querySelector('.hue-shift').appendChild(r.domElement);
+
+    const m = new THREE.Group();
+    [...Array(6)].forEach((_, i) => 
+        [...Array(8)].forEach((_, j) => {
+            const p = new THREE.Mesh(
+                new THREE.CircleGeometry(1 + i * 0.2, 8),
+                new THREE.MeshPhongMaterial({
+                    color: 0x00bcd4,
+                    transparent: true,
+                    opacity: 0.8 - i * 0.1,
+                    side: THREE.DoubleSide
+                })
+            );
+            p.rotation.set(Math.PI/2, 0, j * Math.PI/4);
+            m.add(p);
+        })
+    );
+
+    const dots = new THREE.Points(
+        new THREE.BufferGeometry().setAttribute('position', 
+            new THREE.Float32BufferAttribute(
+                [...Array(3000)].map(() => 
+                    THREE.MathUtils.randFloatSpread(10)
+                ), 3
+            )
+        ),
+        new THREE.PointsMaterial({
+            color: 0x00ffff,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.6
+        })
+    );
+
+    s.add(m, dots,
+        new THREE.PointLight(0x00ffff, 2, 20).translateZ(5),
+        new THREE.PointLight(0x4a148c, 2, 20).translateZ(-5)
+    );
+    c.position.z = 5;
+
+    const mouse = {x:0, y:0};
+    onmousemove = e => {
+        mouse.x = (e.clientX/innerWidth * 2 - 1) * 0.3;
+        mouse.y = -(e.clientY/innerHeight * 2 - 1) * 0.3;
+    };
+    onresize = () => {
+        c.aspect = innerWidth/innerHeight;
+        c.updateProjectionMatrix();
+        r.setSize(innerWidth, innerHeight);
+    };
+
+    (function a() {
+        requestAnimationFrame(a);
+        const t = performance.now() * 0.001;
+        m.scale.setScalar(1 + Math.sin(t * 0.3) * 0.1);
+        m.rotation.z = t * 0.1;
+        dots.rotation.y = t * 0.05;
+        c.position.set(mouse.x, mouse.y, 5);
+        c.lookAt(0, 0, 0);
+        r.render(s, c);
+    })();
+</script>

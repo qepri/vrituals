@@ -1,0 +1,214 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "CONVERSATIONS": "conversations",
+    "UPGRADE": "Upgrade",
+    "CREATE": "Create",
+    "HI": "hi!",
+    "SETTINGS": "Settings",
+    "LOGOUT": "Logout"
+  },
+  "AUTH": {
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "FORGOT_PASSWORD": "Forgot Password?",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "NAME": "Name",
+    "LASTNAME": "Last Name",
+    "BIRTHDATE": "Birthdate",
+    "TERMS": {
+      "ACCEPT": "I have read and accept",
+      "TERMS": "terms and conditions",
+      "AND": "and",
+      "PRIVACY": "privacy policy",
+      "REQUIRED": "You must accept the terms"
+    },
+    "VALIDATION": {
+      "EMAIL_REQUIRED": "Email is required",
+      "PASSWORD_REQUIRED": "Password is required",
+      "PASSWORD_MISMATCH": "Passwords do not match",
+      "NAME_REQUIRED": "Name is required",
+      "LASTNAME_REQUIRED": "Last name is required",
+      "BIRTHDATE_REQUIRED": "Birth date is required"
+    },
+    "BUTTONS": {
+      "LOGIN": "Login",
+      "REGISTER": "Register",
+      "CONTINUE": "Continue",
+      "BACK": "Back",
+      "GOOGLE": "Sign in with Google"
+    },
+    "MESSAGES": {
+      "REGISTRATION_SUCCESS": "Your account is successfully registered. Please check your email to confirm your account.",
+      "LOGIN_FAILED": "Login failed",
+      "REGISTRATION_FAILED": "Registration failed"
+    }
+  },  
+  "DASHBOARD": {
+    "NO_CHATBOTS": "No chatbot roles available. Please try again later.",
+    "CREATE_NEW": "Create New",
+    "AVAILABLE_CHATBOTS": "Available Characters"
+  },
+  "BILLING": {
+    "TITLE": "Billing & Subscription",
+    "PRO_MEMBER": "Pro Member",
+    "FREE_ACCOUNT": "Free Account",
+    "WELCOME_BACK": "Welcome back",
+    "ENJOY_PREMIUM": "Enjoy your premium features",
+    "UNLOCK_FEATURES": "Unlock all features with Pro",
+    "MESSAGES": {
+      "CANCEL_CONFIRM": "Are you sure you want to cancel your subscription?",
+      "CONFIRM_CANCEL": "Yes, Cancel",
+      "SUBSCRIPTION_ENDS": "Your current subscription ends",
+      "NO_SUBSCRIPTION": "You are not subscribed to any plan",
+      "PREMIUM_DESC": "Get premium Zenia and expand your possibilities",
+      "FAILED_LOAD": "Failed to load billing information"
+    },
+    "PLANS": {
+      "MONTHLY": {
+        "TITLE": "Monthly Pro",
+        "PRICE": "$14.99",
+        "PERIOD": "per month"
+      },
+      "ANNUAL": {
+        "TITLE": "Annual Pro",
+        "PRICE": "$143.904",
+        "PERIOD": "per year",
+        "SAVE": "SAVE 20%"
+      }
+    },
+    "FEATURES": {
+      "ENDLESS": "Endless possibilities with AI conversations",
+      "CUSTOM": "Custom AI personalities",
+      "PRIORITY": "Priority support",
+      "ADVANCED": "Advanced features",
+      "DISCOUNT": "20% discount",
+      "HISTORY": "Extended conversation history",
+      "EARLY_ACCESS": "Early access to new features"
+    },
+    "BUTTONS": {
+      "GET_STARTED": "Get Started",
+      "SAVE_ANNUAL": "Save with Annual",
+      "UPGRADE": "Upgrade to Pro",
+      "CANCEL": "Cancel Subscription"
+    },
+    "INVOICES": {
+      "TITLE": "Invoices",
+      "DATE": "Date",
+      "TYPE": "Type",
+      "AMOUNT": "Amount",
+      "ACTIONS": "Actions",
+      "VIEW_PDF": "View PDF",
+      "NO_INVOICES": "No invoices available"
+    }
+  },
+  "CHAT": {
+    "YOU": "You",
+    "SENDING": "Sending...",
+    "SEND": "Send",
+    "PLACEHOLDER": "Type your message here...",
+    "LIMIT_REACHED": "Daily request limit reached. Upgrade to pro account for professional use.",
+    "LOADING": "Loading chat...",
+    "ERROR": {
+      "GENERIC": "Sorry, there was an error processing your request.",
+      "LAST_REQUEST": "This is your last free request for today. Upgrade to pro for professional use."
+    }
+  },
+  "PROFILE_CONFIG": {
+    "MENU_SIDE": {
+      "SETTINGS": "Account Settings",
+      "BILLING": "Billing",
+      "LOGOUT": "Logout"
+    }
+  },
+  "SETTINGS": {
+    "TITLE": "Account Settings",
+    "SELECT_OPTIONS": "Select a section",
+    "CHOSE_SECTION": "Choose to view details",
+    "LANGUAGE": {
+      "TITLE": "Language Settings",
+      "DISPLAY": "Display Language",
+      "SAVE": "Save Changes"
+    }
+  },
+  "COMMON": {
+    "LOADING": "Loading...",
+    "STARTING": "Initializing...",
+    "ERROR": "An error occurred",
+    "RETRY": "Retry",
+    "TRY": "Try Again",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "PROCESSING": "Processing...",
+    "NO_DATA": "No data available",
+    "BACK": "Back",
+    "CONTINUE": "Continue",
+    "REDIRECTING": "Redirecting...",
+    "LOAD_END": "Loading complete"
+  },
+  "FOOTER": {
+    "RIGHTS": "Kwalhia | What cannot be said © 2025",
+    "POWERED": "powered by Kwalhia",
+    "LINKS": {
+      "PRICING": "Pricing",
+      "ABOUT": "About",
+      "TERMS": "Terms of Service",
+      "PRIVACY": "Privacy policy"
+    }
+  },
+  "CREATE": {
+    "TITLE": "Create Companion",
+    "STEPS": {
+      "BASIC": {
+        "TITLE": "Basic Information",
+        "NAME": "Name",
+        "NAME_HELP": "Choose a unique name (3-50 characters)",
+        "DESCRIPTION": "Description",
+        "DESCRIPTION_HELP": "Brief overview (max 200 characters)"
+      },
+      "PERSONALITY": {
+        "TITLE": "Personality Setup",
+        "INSTRUCTIONS": "Character Instructions",
+        "CARDS": {
+          "IDENTITY": {
+            "TITLE": "Identity",
+            "DESC": "Define who this character is, their background, expertise, and key traits"
+          },
+          "PURPOSE": {
+            "TITLE": "Purpose",
+            "DESC": "Explain their main objectives and how they assist users"
+          },
+          "STYLE": {
+            "TITLE": "Style",
+            "DESC": "Describe their communication style, tone, and unique mannerisms"
+          }
+        },
+        "PROMPT_EXAMPLE": "Example:\nI am Dr. Sarah Chen, an experienced data scientist with a focus on machine learning. With 15 years in the field, I specialize in explaining complex concepts in simple terms.\n\nMy goal is to help users understand AI and machine learning concepts, assist with data analysis, and provide guidance on best practices in data science.\n\nI maintain a friendly yet professional tone, often using analogies to explain technical concepts. I'm direct but approachable, and I ensure my explanations are thorough while remaining accessible to learners at all levels.",
+        "TIPS": {
+          "TITLE": "Writing Tips",
+          "INTRO": "Start with a clear introduction of who the character is",
+          "EXPERTISE": "Include relevant expertise, background, or experience",
+          "PURPOSE": "Define their primary purpose and how they help users",
+          "STYLE": "Describe their communication style and personality",
+          "RULES": "Add any specific rules or boundaries they should follow"
+        },
+        "CHAR_REQUIREMENT": "Character instruction should be detailed and specific (min 1000 characters)"
+      },
+      "FINISHING": {
+        "TITLE": "Finishing Touches",
+        "AVATAR_URL": "Avatar URL",
+        "MAKE_PUBLIC": "Make this role public"
+      }
+    },
+    "BUTTONS": {
+      "CREATE": "Create"
+    }
+  },
+  "LOGOUT": {
+    "CONFIRM_TITLE": "Confirm Logout",
+    "CONFIRM_MESSAGE": "Are you sure you want to logout? You will need to sign in again to access your account.",
+    "CONFIRM_BUTTON": "Logout"
+  }
+}
